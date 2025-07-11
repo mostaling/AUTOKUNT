@@ -1,0 +1,246 @@
+
+{
+    "common": {
+        "loading": "جاري التحميل...",
+        "loadingData": "جاري تحميل البيانات...",
+        "dataError": "خطأ في تحميل البيانات.",
+        "save": "حفظ",
+        "create": "إنشاء",
+        "cancel": "إلغاء",
+        "confirm": "تأكيد"
+    },
+    "pageTitles": {
+        "dashboard": "لوحة التحكم",
+        "stock": "إدارة المخزون",
+        "invoices": "الفوترة",
+        "createInvoice": "إنشاء فاتورة",
+        "editInvoice": "تعديل الفاتورة",
+        "customers": "إدارة العملاء",
+        "accounting": "المحاسبة",
+        "settings": "الإعدادات"
+    },
+    "sidebar": {
+        "dashboard": "لوحة التحكم",
+        "stock": "المخزون",
+        "customers": "العملاء",
+        "invoices": "الفواتير",
+        "accounting": "المحاسبة",
+        "settings": "الإعدادات"
+    },
+    "status": {
+        "draft": "مسودة",
+        "sent": "مرسلة",
+        "paid": "مدفوعة",
+        "overdue": "متأخرة",
+        "cancelled": "ملغاة"
+    },
+    "conditions": {
+        "grade_a": "مستعمل - درجة أ",
+        "grade_b": "مستعمل - درجة ب",
+        "for_parts": "قطع غيار"
+    },
+    "dashboard": {
+        "totalRevenue": "إجمالي الدخل",
+        "totalExpenses": "إجمالي المصاريف",
+        "netProfit": "صافي الربح",
+        "revenueVsExpensesChartTitle": "الدخل مقابل المصاريف (آخر 6 أشهر)",
+        "chart": {
+            "revenue": "الدخل",
+            "expenses": "المصاريف"
+        },
+        "notifications": {
+            "loadError": "فشل تحميل بيانات لوحة التحكم."
+        }
+    },
+    "stock": {
+        "searchPlaceholder": "ابحث عن قطعة...",
+        "addPartButton": "إضافة قطعة",
+        "deleteConfirm": "هل أنت متأكد من حذف هذه القطعة؟ هذا الإجراء لا يمكن التراجع عنه.",
+        "table": {
+            "sku": "المرجع",
+            "name": "الاسم",
+            "vehicle": "السيارة المصدر",
+            "condition": "الحالة",
+            "price": "سعر البيع",
+            "stock": "المخزون",
+            "actions": "إجراءات"
+        },
+        "modal": {
+            "addTitle": "إضافة قطعة",
+            "editTitle": "تعديل القطعة"
+        },
+        "form": {
+            "sku": "مرجع SKU",
+            "name": "اسم القطعة",
+            "description": "الوصف",
+            "vehicleMake": "ماركة السيارة",
+            "vehicleModel": "طراز السيارة",
+            "vehicleYear": "سنة الصنع",
+            "condition": "الحالة",
+            "location": "الموقع",
+            "purchasePrice": "سعر الشراء",
+            "sellingPrice": "سعر البيع",
+            "quantity": "الكمية في المخزون"
+        },
+        "notifications": {
+            "loadError": "فشل تحميل القطع.",
+            "saveSuccess": "تم حفظ القطعة {sku}.",
+            "deleteSuccess": "تم حذف القطعة {sku}.",
+            "fillRequiredFields": "يرجى ملء حقول المرجع والاسم وسعر البيع.",
+            "descGeneratedSuccess": "تم إنشاء الوصف بواسطة الذكاء الاصطناعي.",
+            "descGeneratedError": "خطأ في إنشاء الوصف."
+        }
+    },
+    "customers": {
+        "title": "إدارة العملاء",
+        "addButton": "إضافة عميل",
+        "deleteConfirmTitle": "حذف العميل",
+        "deleteConfirmMessage": "هل أنت متأكد من حذف العميل {name}؟ هذا الإجراء لا يمكن التراجع عنه.",
+        "table": {
+            "name": "الاسم",
+            "email": "البريد الإلكتروني",
+            "phone": "الهاتف",
+            "address": "العنوان",
+            "actions": "إجراءات"
+        },
+        "modal": {
+            "addTitle": "إضافة عميل",
+            "editTitle": "تعديل العميل"
+        },
+        "form": {
+            "name": "الاسم",
+            "email": "البريد الإلكتروني",
+            "phone": "الهاتف",
+            "address": "العنوان",
+            "vat": "الرقم الضريبي"
+        },
+        "notifications": {
+            "loadError": "خطأ في تحميل العملاء.",
+            "saveSuccess": "تم حفظ العميل {name}.",
+            "deleteSuccess": "تم حذف العميل.",
+            "deleteError": "فشل حذف العميل.",
+            "fillRequiredFields": "يرجى ملء حقلي الاسم والبريد الإلكتروني."
+        }
+    },
+    "invoices": {
+        "createButton": "إنشاء فاتورة",
+        "unknownCustomer": "عميل غير معروف",
+        "deleteConfirmTitle": "حذف الفاتورة",
+        "deleteConfirmMessage": "هل أنت متأكد من حذف هذه الفاتورة؟ هذا الإجراء لا يمكن التراجع عنه.",
+        "table": {
+            "number": "رقم الفاتورة",
+            "customer": "العميل",
+            "date": "التاريخ",
+            "total": "الإجمالي (شامل الضريبة)",
+            "status": "الحالة",
+            "actions": "إجراءات"
+        },
+        "notifications": {
+            "loadError": "خطأ في تحميل الفواتير.",
+            "settingsLoadError": "إعدادات التطبيق غير محملة.",
+            "pdfSuccess": "تم إنشاء PDF للفاتورة {number}.",
+            "customerNotFoundError": "لم يتم العثور على العميل لهذه الفاتورة.",
+            "deleteSuccess": "تم حذف الفاتورة بنجاح.",
+            "deleteError": "فشل حذف الفاتورة."
+        }
+    },
+    "invoiceEditor": {
+        "loading": "جاري تحميل المحرر...",
+        "customerLabel": "العميل",
+        "dateLabel": "تاريخ الفاتورة",
+        "searchPlaceholder": "ابحث عن قطعة لإضافتها...",
+        "stockLabel": "المخزون",
+        "totalHT": "المجموع (قبل الضريبة)",
+        "vatAmount": "الضريبة ({rate}%)",
+        "totalTTC": "المجموع الكلي",
+        "table": {
+            "description": "الوصف",
+            "qty": "الكمية",
+            "unitPrice": "سعر الوحدة",
+            "totalHT": "المجموع"
+        },
+        "notifications": {
+            "notFound": "الفاتورة غير موجودة.",
+            "loadError": "خطأ في تحميل محرر الفاتورة.",
+            "itemExists": "هذه القطعة موجودة بالفعل في الفاتورة.",
+            "noItemsError": "لا يمكن إنهاء فاتورة فارغة.",
+            "saveSuccess": "تم حفظ الفاتورة {number}.",
+            "saveError": "فشل حفظ الفاتورة. يرجى المحاولة مرة أخرى."
+        }
+    },
+    "accounting": {
+        "title": "المحاسبة",
+        "expenseManagement": "إدارة المصاريف",
+        "addExpense": "إضافة مصروف",
+        "expenseDescriptionPlaceholder": "الوصف (مثال: إيجار، شراء سيارة...)",
+        "expenseAmountPlaceholder": "المبلغ",
+        "addExpenseButton": "إضافة المصروف",
+        "allExpenses": "كافة المصاريف",
+        "reports": "التقارير",
+        "bestSellingParts": "القطع الأكثر مبيعاً",
+        "sold": "تم بيع {count}",
+        "deleteExpenseConfirm": "هل أنت متأكد من حذف هذا المصروف؟",
+        "table": {
+            "description": "الوصف",
+            "date": "التاريخ",
+            "amount": "المبلغ",
+            "actions": "إجراءات"
+        },
+        "notifications": {
+            "loadError": "فشل تحميل البيانات المحاسبية.",
+            "fillFieldsError": "يرجى ملء جميع الحقول بشكل صحيح.",
+            "expenseAddedSuccess": "تمت إضافة المصروف بنجاح.",
+            "expenseDeletedSuccess": "تم حذف المصروف بنجاح.",
+            "expenseDeletedError": "خطأ في حذف المصروف."
+        }
+    },
+    "settings": {
+        "loading": "جاري تحميل الإعدادات...",
+        "saveButton": "حفظ الإعدادات",
+        "companyInfo": {
+            "title": "معلومات الشركة",
+            "name": "اسم الشركة",
+            "phone": "الهاتف",
+            "address": "العنوان",
+            "email": "البريد الإلكتروني",
+            "vatId": "المعرف الجبائي"
+        },
+        "financial": {
+            "title": "الإعدادات المالية",
+            "vatRate": "نسبة الضريبة (%)",
+            "currencySymbol": "رمز العملة",
+            "currencyCode": "رمز العملة (ISO)"
+        },
+        "notifications": {
+            "saveSuccess": "تم حفظ الإعدادات بنجاح.",
+            "saveError": "خطأ في حفظ الإعدادات."
+        }
+    },
+    "gemini": {
+        "apiKeyError": "مفتاح API غير مهيأ.",
+        "generationError": "خطأ أثناء إنشاء الوصف."
+    },
+    "pdf": {
+        "invoiceTitle": "فاتورة",
+        "phoneLabel": "الهاتف",
+        "emailLabel": "البريد الإلكتروني",
+        "vatIdLabel": "المعرف الجبائي",
+        "invoiceNumberLabel": "رقم الفاتورة",
+        "invoiceDateLabel": "تاريخ الفاتورة",
+        "dueDateLabel": "تاريخ الاستحقاق",
+        "billToLabel": "فوترة إلى",
+        "customerVatLabel": "الرقم الضريبي للعميل",
+        "table": {
+            "ref": "المرجع",
+            "designation": "الوصف",
+            "unitPrice": "سعر الوحدة",
+            "qty": "الكمية",
+            "totalHT": "المجموع"
+        },
+        "totalHT": "المجموع (قبل الضريبة)",
+        "vatAmount": "قيمة الضريبة",
+        "totalTTC": "المجموع الكلي",
+        "footer": "شروط الدفع: الدفع عند استلام الفاتورة. شكرا لثقتكم.",
+        "invoiceFileName": "فاتورة"
+    }
+}

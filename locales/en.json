@@ -1,0 +1,246 @@
+
+{
+    "common": {
+        "loading": "Loading...",
+        "loadingData": "Loading data...",
+        "dataError": "Error loading data.",
+        "save": "Save",
+        "create": "Create",
+        "cancel": "Cancel",
+        "confirm": "Confirm"
+    },
+    "pageTitles": {
+        "dashboard": "Dashboard",
+        "stock": "Stock Management",
+        "invoices": "Invoicing",
+        "createInvoice": "Create Invoice",
+        "editInvoice": "Edit Invoice",
+        "customers": "Customer Management",
+        "accounting": "Accounting",
+        "settings": "Settings"
+    },
+    "sidebar": {
+        "dashboard": "Dashboard",
+        "stock": "Stock",
+        "customers": "Customers",
+        "invoices": "Invoices",
+        "accounting": "Accounting",
+        "settings": "Settings"
+    },
+    "status": {
+        "draft": "Draft",
+        "sent": "Sent",
+        "paid": "Paid",
+        "overdue": "Overdue",
+        "cancelled": "Cancelled"
+    },
+    "conditions": {
+        "grade_a": "Used - Grade A",
+        "grade_b": "Used - Grade B",
+        "for_parts": "For Parts"
+    },
+    "dashboard": {
+        "totalRevenue": "Total Revenue",
+        "totalExpenses": "Total Expenses",
+        "netProfit": "Net Profit",
+        "revenueVsExpensesChartTitle": "Revenue vs. Expenses (Last 6 months)",
+        "chart": {
+            "revenue": "Revenue",
+            "expenses": "Expenses"
+        },
+        "notifications": {
+            "loadError": "Failed to load dashboard data."
+        }
+    },
+    "stock": {
+        "searchPlaceholder": "Search for a part...",
+        "addPartButton": "Add Part",
+        "deleteConfirm": "Are you sure you want to delete this part? This action is irreversible.",
+        "table": {
+            "sku": "SKU Ref.",
+            "name": "Name",
+            "vehicle": "Source Vehicle",
+            "condition": "Condition",
+            "price": "Selling Price",
+            "stock": "Stock",
+            "actions": "Actions"
+        },
+        "modal": {
+            "addTitle": "Add Part",
+            "editTitle": "Edit Part"
+        },
+        "form": {
+            "sku": "SKU Ref.",
+            "name": "Part Name",
+            "description": "Description",
+            "vehicleMake": "Vehicle Make",
+            "vehicleModel": "Vehicle Model",
+            "vehicleYear": "Vehicle Year",
+            "condition": "Condition",
+            "location": "Location",
+            "purchasePrice": "Purchase Price",
+            "sellingPrice": "Selling Price",
+            "quantity": "Quantity in Stock"
+        },
+        "notifications": {
+            "loadError": "Failed to load parts.",
+            "saveSuccess": "Part {sku} saved.",
+            "deleteSuccess": "Part {sku} deleted.",
+            "fillRequiredFields": "Please fill in the SKU, Name, and Selling Price fields.",
+            "descGeneratedSuccess": "AI description generated.",
+            "descGeneratedError": "Error generating description."
+        }
+    },
+    "customers": {
+        "title": "Customer Management",
+        "addButton": "Add Customer",
+        "deleteConfirmTitle": "Delete Customer",
+        "deleteConfirmMessage": "Are you sure you want to delete {name}? This action is irreversible.",
+        "table": {
+            "name": "Name",
+            "email": "Email",
+            "phone": "Phone",
+            "address": "Address",
+            "actions": "Actions"
+        },
+        "modal": {
+            "addTitle": "Add Customer",
+            "editTitle": "Edit Customer"
+        },
+        "form": {
+            "name": "Name",
+            "email": "Email",
+            "phone": "Phone",
+            "address": "Address",
+            "vat": "VAT Number"
+        },
+        "notifications": {
+            "loadError": "Error loading customers.",
+            "saveSuccess": "Customer {name} saved.",
+            "deleteSuccess": "Customer deleted.",
+            "deleteError": "Failed to delete customer.",
+            "fillRequiredFields": "Please fill in the Name and Email fields."
+        }
+    },
+    "invoices": {
+        "createButton": "Create Invoice",
+        "unknownCustomer": "Unknown Customer",
+        "deleteConfirmTitle": "Delete Invoice",
+        "deleteConfirmMessage": "Are you sure you want to delete this invoice? This action is irreversible.",
+        "table": {
+            "number": "Invoice No.",
+            "customer": "Customer",
+            "date": "Date",
+            "total": "Total (incl. tax)",
+            "status": "Status",
+            "actions": "Actions"
+        },
+        "notifications": {
+            "loadError": "Error loading invoices.",
+            "settingsLoadError": "Application settings are not loaded.",
+            "pdfSuccess": "PDF for invoice {number} generated.",
+            "customerNotFoundError": "Customer not found for this invoice.",
+            "deleteSuccess": "Invoice deleted successfully.",
+            "deleteError": "Failed to delete invoice."
+        }
+    },
+    "invoiceEditor": {
+        "loading": "Loading editor...",
+        "customerLabel": "Customer",
+        "dateLabel": "Invoice Date",
+        "searchPlaceholder": "Search for a part to add...",
+        "stockLabel": "Stock",
+        "totalHT": "Subtotal",
+        "vatAmount": "VAT ({rate}%)",
+        "totalTTC": "GRAND TOTAL",
+        "table": {
+            "description": "Description",
+            "qty": "Qty",
+            "unitPrice": "Unit Price",
+            "totalHT": "Total"
+        },
+        "notifications": {
+            "notFound": "Invoice not found.",
+            "loadError": "Error loading the invoice editor.",
+            "itemExists": "This part is already in the invoice.",
+            "noItemsError": "An invoice cannot be finalized with no items.",
+            "saveSuccess": "Invoice {number} saved.",
+            "saveError": "Failed to save the invoice. Please try again."
+        }
+    },
+    "accounting": {
+        "title": "Accounting",
+        "expenseManagement": "Expense Management",
+        "addExpense": "Add an Expense",
+        "expenseDescriptionPlaceholder": "Description (e.g., Rent, Wreck purchase...)",
+        "expenseAmountPlaceholder": "Amount",
+        "addExpenseButton": "Add Expense",
+        "allExpenses": "All Expenses",
+        "reports": "Reports",
+        "bestSellingParts": "Best-Selling Parts",
+        "sold": "{count} sold",
+        "deleteExpenseConfirm": "Are you sure you want to delete this expense?",
+        "table": {
+            "description": "Description",
+            "date": "Date",
+            "amount": "Amount",
+            "actions": "Actions"
+        },
+        "notifications": {
+            "loadError": "Failed to load accounting data.",
+            "fillFieldsError": "Please fill all fields correctly.",
+            "expenseAddedSuccess": "Expense added successfully.",
+            "expenseDeletedSuccess": "Expense deleted successfully.",
+            "expenseDeletedError": "Error deleting expense."
+        }
+    },
+    "settings": {
+        "loading": "Loading settings...",
+        "saveButton": "Save Settings",
+        "companyInfo": {
+            "title": "Company Information",
+            "name": "Company Name",
+            "phone": "Phone",
+            "address": "Address",
+            "email": "Email",
+            "vatId": "VAT / Tax ID"
+        },
+        "financial": {
+            "title": "Financial Settings",
+            "vatRate": "VAT Rate (%)",
+            "currencySymbol": "Currency Symbol",
+            "currencyCode": "Currency Code (ISO)"
+        },
+        "notifications": {
+            "saveSuccess": "Settings saved successfully.",
+            "saveError": "Error saving settings."
+        }
+    },
+    "gemini": {
+        "apiKeyError": "API Key not configured.",
+        "generationError": "Error generating description."
+    },
+    "pdf": {
+        "invoiceTitle": "INVOICE",
+        "phoneLabel": "Phone",
+        "emailLabel": "Email",
+        "vatIdLabel": "Tax ID",
+        "invoiceNumberLabel": "Invoice No.",
+        "invoiceDateLabel": "Invoice Date",
+        "dueDateLabel": "Due Date",
+        "billToLabel": "BILL TO",
+        "customerVatLabel": "Customer VAT",
+        "table": {
+            "ref": "REF.",
+            "designation": "DESCRIPTION",
+            "unitPrice": "UNIT PRICE",
+            "qty": "QTY",
+            "totalHT": "TOTAL"
+        },
+        "totalHT": "Subtotal",
+        "vatAmount": "VAT Amount",
+        "totalTTC": "TOTAL (incl. tax)",
+        "footer": "Payment terms: Payment upon receipt of invoice. Thank you for your business.",
+        "invoiceFileName": "Invoice"
+    }
+}

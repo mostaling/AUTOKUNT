@@ -1,0 +1,246 @@
+
+{
+    "common": {
+        "loading": "Chargement...",
+        "loadingData": "Chargement des données...",
+        "dataError": "Erreur lors du chargement des données.",
+        "save": "Sauvegarder",
+        "create": "Créer",
+        "cancel": "Annuler",
+        "confirm": "Confirmer"
+    },
+    "pageTitles": {
+        "dashboard": "Tableau de Bord",
+        "stock": "Gestion de Stock",
+        "invoices": "Facturation",
+        "createInvoice": "Créer une Facture",
+        "editInvoice": "Modifier la Facture",
+        "customers": "Gestion des Clients",
+        "accounting": "Comptabilité",
+        "settings": "Paramètres"
+    },
+    "sidebar": {
+        "dashboard": "Tableau de Bord",
+        "stock": "Stock",
+        "customers": "Clients",
+        "invoices": "Factures",
+        "accounting": "Comptabilité",
+        "settings": "Paramètres"
+    },
+    "status": {
+        "draft": "Brouillon",
+        "sent": "Envoyée",
+        "paid": "Payée",
+        "overdue": "En retard",
+        "cancelled": "Annulée"
+    },
+    "conditions": {
+        "grade_a": "Occasion - Grade A",
+        "grade_b": "Occasion - Grade B",
+        "for_parts": "Pour pièces"
+    },
+    "dashboard": {
+        "totalRevenue": "Revenu Total",
+        "totalExpenses": "Dépenses Totales",
+        "netProfit": "Bénéfice Net",
+        "revenueVsExpensesChartTitle": "Revenus vs Dépenses (6 derniers mois)",
+        "chart": {
+            "revenue": "Revenus",
+            "expenses": "Dépenses"
+        },
+        "notifications": {
+            "loadError": "Erreur lors du chargement des données du tableau de bord."
+        }
+    },
+    "stock": {
+        "searchPlaceholder": "Rechercher une pièce...",
+        "addPartButton": "Ajouter une pièce",
+        "deleteConfirm": "Êtes-vous sûr de vouloir supprimer cette pièce ? Cette action est irréversible.",
+        "table": {
+            "sku": "Réf. SKU",
+            "name": "Nom",
+            "vehicle": "Véhicule Source",
+            "condition": "Condition",
+            "price": "Prix Vente",
+            "stock": "Stock",
+            "actions": "Actions"
+        },
+        "modal": {
+            "addTitle": "Ajouter une Pièce",
+            "editTitle": "Modifier la Pièce"
+        },
+        "form": {
+            "sku": "Réf. SKU",
+            "name": "Nom de la pièce",
+            "description": "Description",
+            "vehicleMake": "Marque Véhicule",
+            "vehicleModel": "Modèle Véhicule",
+            "vehicleYear": "Année Véhicule",
+            "condition": "Condition",
+            "location": "Emplacement",
+            "purchasePrice": "Prix Achat",
+            "sellingPrice": "Prix Vente",
+            "quantity": "Quantité en Stock"
+        },
+        "notifications": {
+            "loadError": "Erreur lors du chargement des pièces.",
+            "saveSuccess": "Pièce {sku} sauvegardée.",
+            "deleteSuccess": "Pièce {sku} supprimée.",
+            "fillRequiredFields": "Veuillez remplir les champs Réf. SKU, Nom et Prix de Vente.",
+            "descGeneratedSuccess": "Description générée par IA.",
+            "descGeneratedError": "Erreur lors de la génération de la description."
+        }
+    },
+    "customers": {
+        "title": "Gestion des Clients",
+        "addButton": "Ajouter un client",
+        "deleteConfirmTitle": "Supprimer le Client",
+        "deleteConfirmMessage": "Êtes-vous sûr de vouloir supprimer le client {name} ? Cette action est irréversible.",
+        "table": {
+            "name": "Nom",
+            "email": "Email",
+            "phone": "Téléphone",
+            "address": "Adresse",
+            "actions": "Actions"
+        },
+        "modal": {
+            "addTitle": "Ajouter un Client",
+            "editTitle": "Modifier le Client"
+        },
+        "form": {
+            "name": "Nom",
+            "email": "Email",
+            "phone": "Téléphone",
+            "address": "Adresse",
+            "vat": "Matricule Fiscal (TVA)"
+        },
+        "notifications": {
+            "loadError": "Erreur lors du chargement des clients.",
+            "saveSuccess": "Client {name} sauvegardé.",
+            "deleteSuccess": "Client supprimé.",
+            "deleteError": "Échec de la suppression du client.",
+            "fillRequiredFields": "Veuillez remplir les champs Nom et Email."
+        }
+    },
+    "invoices": {
+        "createButton": "Créer une facture",
+        "unknownCustomer": "Client inconnu",
+        "deleteConfirmTitle": "Supprimer la Facture",
+        "deleteConfirmMessage": "Êtes-vous sûr de vouloir supprimer cette facture ? Cette action est irréversible.",
+        "table": {
+            "number": "N° Facture",
+            "customer": "Client",
+            "date": "Date",
+            "total": "Total TTC",
+            "status": "Statut",
+            "actions": "Actions"
+        },
+        "notifications": {
+            "loadError": "Erreur lors du chargement des factures.",
+            "settingsLoadError": "Les paramètres de l'application ne sont pas chargés.",
+            "pdfSuccess": "PDF pour la facture {number} généré.",
+            "customerNotFoundError": "Client non trouvé pour cette facture.",
+            "deleteSuccess": "Facture supprimée avec succès.",
+            "deleteError": "Échec de la suppression de la facture."
+        }
+    },
+    "invoiceEditor": {
+        "loading": "Chargement de l'éditeur...",
+        "customerLabel": "Client",
+        "dateLabel": "Date de la facture",
+        "searchPlaceholder": "Rechercher une pièce à ajouter...",
+        "stockLabel": "Stock",
+        "totalHT": "Total HT",
+        "vatAmount": "TVA ({rate}%)",
+        "totalTTC": "TOTAL TTC",
+        "table": {
+            "description": "Description",
+            "qty": "Qté",
+            "unitPrice": "P.U. HT",
+            "totalHT": "Total HT"
+        },
+        "notifications": {
+            "notFound": "Facture non trouvée.",
+            "loadError": "Erreur lors du chargement de l'éditeur de facture.",
+            "itemExists": "Cette pièce est déjà dans la facture.",
+            "noItemsError": "Une facture ne peut pas être finalisée sans articles.",
+            "saveSuccess": "Facture {number} sauvegardée.",
+            "saveError": "Échec de la sauvegarde de la facture. Veuillez réessayer."
+        }
+    },
+    "accounting": {
+        "title": "Comptabilité",
+        "expenseManagement": "Gestion des Dépenses",
+        "addExpense": "Ajouter une Dépense",
+        "expenseDescriptionPlaceholder": "Description (ex: Loyer, Achat épave...)",
+        "expenseAmountPlaceholder": "Montant",
+        "addExpenseButton": "Ajouter la dépense",
+        "allExpenses": "Toutes les Dépenses",
+        "reports": "Rapports",
+        "bestSellingParts": "Pièces les plus vendues",
+        "sold": "{count} vendues",
+        "deleteExpenseConfirm": "Êtes-vous sûr de vouloir supprimer cette dépense ?",
+        "table": {
+            "description": "Description",
+            "date": "Date",
+            "amount": "Montant",
+            "actions": "Actions"
+        },
+        "notifications": {
+            "loadError": "Erreur de chargement des données comptables.",
+            "fillFieldsError": "Veuillez remplir correctement tous les champs.",
+            "expenseAddedSuccess": "Dépense ajoutée avec succès.",
+            "expenseDeletedSuccess": "Dépense supprimée avec succès.",
+            "expenseDeletedError": "Erreur lors de la suppression de la dépense."
+        }
+    },
+    "settings": {
+        "loading": "Chargement des paramètres...",
+        "saveButton": "Sauvegarder les Paramètres",
+        "companyInfo": {
+            "title": "Informations sur l'entreprise",
+            "name": "Nom de l'entreprise",
+            "phone": "Téléphone",
+            "address": "Adresse",
+            "email": "Email",
+            "vatId": "Matricule Fiscal"
+        },
+        "financial": {
+            "title": "Paramètres Financiers",
+            "vatRate": "Taux de TVA (%)",
+            "currencySymbol": "Symbole Monétaire",
+            "currencyCode": "Code Monétaire (ISO)"
+        },
+        "notifications": {
+            "saveSuccess": "Paramètres sauvegardés avec succès.",
+            "saveError": "Erreur lors de la sauvegarde des paramètres."
+        }
+    },
+    "gemini": {
+        "apiKeyError": "Clé API non configurée.",
+        "generationError": "Erreur lors de la génération de la description."
+    },
+    "pdf": {
+        "invoiceTitle": "FACTURE",
+        "phoneLabel": "Tél",
+        "emailLabel": "Email",
+        "vatIdLabel": "Matricule Fiscal",
+        "invoiceNumberLabel": "Facture N°",
+        "invoiceDateLabel": "Date de Facture",
+        "dueDateLabel": "Date d'échéance",
+        "billToLabel": "FACTURÉ À",
+        "customerVatLabel": "N° TVA",
+        "table": {
+            "ref": "RÉF.",
+            "designation": "DÉSIGNATION",
+            "unitPrice": "P.U. HT",
+            "qty": "QTÉ",
+            "totalHT": "MONTANT HT"
+        },
+        "totalHT": "Total HT",
+        "vatAmount": "Montant TVA",
+        "totalTTC": "TOTAL TTC",
+        "footer": "Conditions de paiement: Paiement à réception de facture. Merci de votre confiance.",
+        "invoiceFileName": "Facture"
+    }
+}
