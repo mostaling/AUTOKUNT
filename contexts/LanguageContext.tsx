@@ -11,34 +11,41 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [language, setLanguageState] = useState<Language>(
-    (localStorage.getItem('language') as Language) || 'fr'
+    () => (localStorage.getItem('language') as Language) || 'fr'
   );
-  const [translations, setTranslations] = useState<Record<string, any>>({});
-  const [isLoading, setIsLoading] = useState(true);
+  const [translations, setTranslations] = useState<Record<string, any> | null>(null);
 
   useEffect(() => {
+    let isMounted = true;
     const loadTranslations = async () => {
-      // Don't set loading to true when just switching languages, only on initial load.
-      // setIsLoading(true); 
       try {
         const response = await fetch(`/locales/${language}.json`);
         if (!response.ok) {
           throw new Error(`Failed to fetch translations for ${language}: ${response.status} ${response.statusText}`);
         }
         const data = await response.json();
-        setTranslations(data);
+        if (isMounted) {
+          setTranslations(data);
+        }
       } catch (error) {
-        console.error(error);
-        setTranslations({}); // Fallback to empty to show keys on error
-      } finally {
-        setIsLoading(false);
+        console.error("Error loading translation file:", error);
+        // Fallback to empty to show keys on error
+        if (isMounted) {
+          setTranslations({});
+        }
       }
     };
+    
+    // Set translations to null to show loading state while new language is loading
+    setTranslations(null); 
     loadTranslations();
 
-    // Set document direction
     document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
     document.documentElement.lang = language;
+
+    return () => {
+      isMounted = false;
+    };
   }, [language]);
 
   const setLanguage = (lang: Language) => {
@@ -47,6 +54,9 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   };
 
   const t = useCallback((key: string, options: any = {}) => {
+    if (translations === null) {
+      return key; // Return key during loading state
+    }
     const keys = key.split('.');
     let result: any = translations;
     for (const k of keys) {
@@ -67,7 +77,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     return key;
   }, [translations]);
   
-  if (isLoading) {
+  if (translations === null) {
     return (
         <div className="flex justify-center items-center h-screen bg-gray-900 text-white font-sans">
             <div>Loading application...</div>
