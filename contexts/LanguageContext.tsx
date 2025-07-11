@@ -14,15 +14,24 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     (localStorage.getItem('language') as Language) || 'fr'
   );
   const [translations, setTranslations] = useState<Record<string, any>>({});
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const loadTranslations = async () => {
+      // Don't set loading to true when just switching languages, only on initial load.
+      // setIsLoading(true); 
       try {
         const response = await fetch(`/locales/${language}.json`);
+        if (!response.ok) {
+          throw new Error(`Failed to fetch translations for ${language}: ${response.status} ${response.statusText}`);
+        }
         const data = await response.json();
         setTranslations(data);
       } catch (error) {
-        console.error(`Could not load translations for ${language}`, error);
+        console.error(error);
+        setTranslations({}); // Fallback to empty to show keys on error
+      } finally {
+        setIsLoading(false);
       }
     };
     loadTranslations();
@@ -57,6 +66,14 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     
     return key;
   }, [translations]);
+  
+  if (isLoading) {
+    return (
+        <div className="flex justify-center items-center h-screen bg-gray-900 text-white font-sans">
+            <div>Loading application...</div>
+        </div>
+    );
+  }
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t }}>
