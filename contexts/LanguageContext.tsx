@@ -14,38 +14,35 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     () => (localStorage.getItem('language') as Language) || 'fr'
   );
   const [translations, setTranslations] = useState<Record<string, any> | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    let isMounted = true;
     const loadTranslations = async () => {
+      setIsLoading(true);
+      setError(null);
       try {
         const response = await fetch(`/locales/${language}.json`);
         if (!response.ok) {
-          throw new Error(`Failed to fetch translations for ${language}: ${response.status} ${response.statusText}`);
+          throw new Error(`Failed to load translation file for '${language}'. Status: ${response.status} ${response.statusText}`);
         }
         const data = await response.json();
-        if (isMounted) {
-          setTranslations(data);
-        }
-      } catch (error) {
-        console.error("Error loading translation file:", error);
-        // Fallback to empty to show keys on error
-        if (isMounted) {
-          setTranslations({});
-        }
+        setTranslations(data);
+      } catch (e: any) {
+        console.error("Translation loading error:", e);
+        setError(e.message || 'An unknown error occurred while loading translations.');
+        setTranslations({}); // Set to empty on error, but the error screen will be shown.
+      } finally {
+        setIsLoading(false);
       }
     };
-    
-    // Set translations to null to show loading state while new language is loading
-    setTranslations(null); 
-    loadTranslations();
 
+    loadTranslations();
+  }, [language]);
+
+  useEffect(() => {
     document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
     document.documentElement.lang = language;
-
-    return () => {
-      isMounted = false;
-    };
   }, [language]);
 
   const setLanguage = (lang: Language) => {
@@ -54,8 +51,8 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   };
 
   const t = useCallback((key: string, options: any = {}) => {
-    if (translations === null) {
-      return key; // Return key during loading state
+    if (!translations) {
+      return key;
     }
     const keys = key.split('.');
     let result: any = translations;
@@ -63,12 +60,11 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       if (result && typeof result === 'object' && k in result) {
         result = result[k];
       } else {
-        return key; // Return the key if not found
+        return key;
       }
     }
 
     if (typeof result === 'string') {
-       // Replace placeholders like {name}
       return result.replace(/\{(\w+)\}/g, (placeholder, placeholderKey) => {
         return options[placeholderKey] !== undefined ? options[placeholderKey] : placeholder;
       });
@@ -77,11 +73,22 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     return key;
   }, [translations]);
   
-  if (translations === null) {
+  if (isLoading) {
     return (
-        <div className="flex justify-center items-center h-screen bg-gray-900 text-white font-sans">
-            <div>Loading application...</div>
-        </div>
+      <div className="flex justify-center items-center h-screen bg-gray-900 text-white font-sans text-lg">
+        <div>Loading application...</div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="flex flex-col justify-center items-center h-screen bg-red-900 text-white font-sans p-4 text-center">
+        <h2 className="text-2xl font-bold mb-4">Application Error</h2>
+        <p className="text-lg mb-2">Could not load required language files.</p>
+        <p className="font-mono bg-red-800 p-2 rounded text-sm">{error}</p>
+        <p className="mt-4 text-gray-300">Please check the browser's console (F12) for more details and verify that the language files exist in the `public/locales` directory in your project.</p>
+      </div>
     );
   }
 
